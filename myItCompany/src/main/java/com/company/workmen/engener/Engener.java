@@ -2,11 +2,13 @@ package com.company.workmen.engener;
 
 
 import com.company.workmen.WorkMen;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Engener extends WorkMen {
 
-
-    public Engener(int lvlSkills, double salary, String name, String surName, int age, int workExperience) {
+@JsonCreator
+    public Engener(@JsonProperty("lveSkills")int lvlSkills, @JsonProperty("salary")double salary,@JsonProperty("name") String name,@JsonProperty("surName") String surName, @JsonProperty("age")int age,@JsonProperty("workExperience") int workExperience) {
         super(lvlSkills, salary, name, surName, age, workExperience);
     }
 

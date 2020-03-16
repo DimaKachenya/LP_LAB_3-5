@@ -1,1 +1,49 @@
-{"myList":[{"lvlSkills":3,"salary":3000.0,"age":20,"workExperience":4,"name":"Stepan","surName":"Arhipov"},{"lvlSkills":4,"salary":4000.0,"age":19,"workExperience":3,"name":"Ily","surName":"Istomin"},{"lvlSkills":5,"salary":700.0,"age":19,"workExperience":4,"programmingLanguage":"C#","spec":"backEnd","name":"Valera","surName":"Romanitsky"},{"lvlSkills":6,"salary":1500.0,"age":19,"workExperience":4,"programmingLanguage":"JavaScript","spec":"frontEnd","name":"Leha","surName":"Ostrovsky"},{"lvlSkills":10,"salary":10000.0,"age":19,"workExperience":5,"programmingLanguage":"Java","spec":"backEnd","name":"Dima","surName":"Kachenya"}]}
+{
+  "myList" : [ {
+    "type" : "com.company.workmen.engener.Engener",
+    "salary" : 3000.0,
+    "name" : "Stepan",
+    "surName" : "Arhipov",
+    "age" : 20,
+    "workExperience" : 4,
+    "lvlSkills" : 3
+  }, {
+    "type" : "com.company.workmen.sysadmin.SysAdmin",
+    "lvlSkills" : 4,
+    "salary" : 4000.0,
+    "name" : "Ily",
+    "surName" : "Istomin",
+    "age" : 19,
+    "workExperience" : 3
+  }, {
+    "type" : "com.company.workmen.programmer.classification.Junior",
+    "salary" : 700.0,
+    "name" : "Valera",
+    "surName" : "Romanitsky",
+    "age" : 19,
+    "workExperience" : 4,
+    "programmingLanguage" : "C#",
+    "spec" : "backEnd",
+    "lvlSkills" : 5
+  }, {
+    "type" : "com.company.workmen.programmer.classification.Middle",
+    "salary" : 1500.0,
+    "name" : "Leha",
+    "surName" : "Ostrovsky",
+    "age" : 19,
+    "workExperience" : 4,
+    "programmingLanguage" : "JavaScript",
+    "spec" : "frontEnd",
+    "lvlSkills" : 6
+  }, {
+    "type" : "com.company.workmen.programmer.classification.Senior",
+    "salary" : 10000.0,
+    "name" : "Dima",
+    "surName" : "Kachenya",
+    "age" : 19,
+    "workExperience" : 5,
+    "programmingLanguage" : "Java",
+    "spec" : "backEnd",
+    "lvlSkills" : 10
+  } ]
+}

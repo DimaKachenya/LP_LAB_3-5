@@ -4,9 +4,14 @@ import com.company.workmen.WorkMen;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ItCompanyCollection implements Serializable {
-    public ArrayList<WorkMen> myList = new ArrayList();
+    public List<WorkMen> myList;
+
+    public ItCompanyCollection() {
+        this.myList = new ArrayList();
+    }
 
     public void Add(WorkMen workMen) {
         myList.add(workMen);

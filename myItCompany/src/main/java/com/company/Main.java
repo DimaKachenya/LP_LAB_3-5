@@ -11,6 +11,7 @@ import com.company.workmen.programmer.classification.Middle;
 import com.company.workmen.programmer.classification.Senior;
 import com.company.workmen.sysadmin.SysAdmin;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 
 import java.io.File;
@@ -51,9 +52,18 @@ public class Main {
         CustomSerializer.jsonSerializer(myList);
         ObjectMapper ob=new ObjectMapper();
 
-        ItCompanyCollection google =new ItCompanyCollection();
-        google=ob.readValue(new File("myItCompany.json"),ItCompanyCollection.class);
-        google.toString();
+//        ItCompanyCollection google =new ItCompanyCollection();
+//        google=ob.readValue(new File("myItCompany.json"),ItCompanyCollection.class);
+//        google.toString();
+        ob.configure(SerializationFeature.INDENT_OUTPUT, true);
+        String s=ob.writeValueAsString(myList);
+        System.out.println(s);
+        ItCompanyCollection google=new ItCompanyCollection();
+        google =ob.readValue(s,ItCompanyCollection.class);
+        google.PrintAllInformationAboutWorkMen();
+
+
+
         logger.info("Main method end");
 
     }

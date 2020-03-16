@@ -1,7 +1,24 @@
 package com.company.workmen;
 
-import java.io.Serializable;
+import com.company.workmen.engener.Engener;
+import com.company.workmen.programmer.classification.Junior;
+import com.company.workmen.programmer.classification.Middle;
+import com.company.workmen.programmer.classification.Senior;
+import com.company.workmen.sysadmin.SysAdmin;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import java.io.Serializable;
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = SysAdmin.class),
+        @JsonSubTypes.Type(value = Engener.class),
+        @JsonSubTypes.Type( value = Junior.class),
+        @JsonSubTypes.Type( value = Middle.class),
+        @JsonSubTypes.Type( value = Senior.class),
+})
 public abstract class WorkMen implements IWorkMen, Serializable {
 
     public double getSalary() {

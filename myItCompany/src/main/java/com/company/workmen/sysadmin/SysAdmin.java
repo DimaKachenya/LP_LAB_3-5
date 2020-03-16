@@ -2,9 +2,12 @@ package com.company.workmen.sysadmin;
 
 
 import com.company.workmen.WorkMen;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SysAdmin extends WorkMen {
-    public SysAdmin(int lvlSkills, double salary, String name, String surName, int age, int workExperience) {
+    @JsonCreator
+    public SysAdmin(@JsonProperty("lvlSkills")int lvlSkills,@JsonProperty("salary") double salary,@JsonProperty("name") String name, @JsonProperty("surName")String surName,@JsonProperty("age") int age,@JsonProperty("workExperience") int workExperience) {
         super(lvlSkills, salary, name, surName, age, workExperience);
     }
 
