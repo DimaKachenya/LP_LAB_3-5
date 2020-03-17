@@ -1,13 +1,5 @@
 {
   "myList" : [ {
-    "type" : "com.company.workmen.engener.Engener",
-    "salary" : 3000.0,
-    "name" : "Stepan",
-    "surName" : "Arhipov",
-    "age" : 20,
-    "workExperience" : 4,
-    "lvlSkills" : 3
-  }, {
     "type" : "com.company.workmen.sysadmin.SysAdmin",
     "lvlSkills" : 4,
     "salary" : 4000.0,
@@ -15,6 +7,14 @@
     "surName" : "Istomin",
     "age" : 19,
     "workExperience" : 3
+  }, {
+    "type" : "com.company.workmen.engener.Engener",
+    "salary" : 3000.0,
+    "name" : "Stepan",
+    "surName" : "Arhipov",
+    "age" : 20,
+    "workExperience" : 4,
+    "lvlSkills" : 3
   }, {
     "type" : "com.company.workmen.programmer.classification.Junior",
     "salary" : 700.0,

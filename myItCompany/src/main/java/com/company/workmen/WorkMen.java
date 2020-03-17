@@ -7,8 +7,10 @@ import com.company.workmen.programmer.classification.Senior;
 import com.company.workmen.sysadmin.SysAdmin;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.io.Serializable;
+
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS,
         include = JsonTypeInfo.As.PROPERTY,
         property = "type")

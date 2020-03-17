@@ -3,18 +3,17 @@ package com.company;
 
 import com.company.director.Director;
 import com.company.serialyzer.CustomSerializer;
-import com.company.workmen.WorkMen;
 import com.company.workmen.engener.Engener;
 import com.company.workmen.programmer.Spec;
 import com.company.workmen.programmer.classification.Junior;
 import com.company.workmen.programmer.classification.Middle;
 import com.company.workmen.programmer.classification.Senior;
 import com.company.workmen.sysadmin.SysAdmin;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Logger;
 
@@ -36,32 +35,18 @@ public class Main {
         myList.Add(romanitsy);
         myList.Add(ostrovsky);
         myList.Add(kachenya);
-        director.countWorkMen(myList);
-        director.sortMyCompanyBySalary(myList);
-        // myList.PrintAllInformationAboutWorkMen();
-        director.sortMyCompanyByLvlSkills(myList);
-//        System.out.println();
-//        System.out.println();
-//        System.out.println();
-//        myList.PrintAllInformationAboutWorkMen();
-        ///////////
-        ///////////
-        ///////////
-        ///////////
+
+        CustomSerializer.byteSerializer(myList);
+        ItCompanyCollection epam = CustomSerializer.byteDeserializer();
+
 
         CustomSerializer.jsonSerializer(myList);
-        ObjectMapper ob=new ObjectMapper();
+        ItCompanyCollection google = CustomSerializer.jsonDeserializer();
 
-//        ItCompanyCollection google =new ItCompanyCollection();
-//        google=ob.readValue(new File("myItCompany.json"),ItCompanyCollection.class);
-//        google.toString();
-        ob.configure(SerializationFeature.INDENT_OUTPUT, true);
-        String s=ob.writeValueAsString(myList);
-        System.out.println(s);
-        ItCompanyCollection google=new ItCompanyCollection();
-        google =ob.readValue(s,ItCompanyCollection.class);
-        google.PrintAllInformationAboutWorkMen();
 
+
+        CustomSerializer.xmlSerializer(myList);
+        ItCompanyCollection windows=CustomSerializer.xmlDeserializer();
 
 
         logger.info("Main method end");
